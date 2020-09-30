@@ -1,0 +1,759 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="acm | algorithm | blog | ctf | ml">
+  <meta name="author" content="TLS">
+  <meta name="keywords" content="ACM, Algorithm, CTF">
+  <title>leetcode单向链表[206, 24, 141, 142, 25] - TLS&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+        
+        
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/prism/1.21.0/themes/prism-tomorrow.min.css" />
+      
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>TLS</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/posts/default_banner.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-10-02 00:00" pubdate>
+        2019年10月2日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">leetcode单向链表[206, 24, 141, 142, 25]</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：4 个月前
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h1 id="【leetcode】链表题目训练-206-24-141-142-25"><a href="#【leetcode】链表题目训练-206-24-141-142-25" class="headerlink" title="【leetcode】链表题目训练[206, 24, 141, 142, 25]"></a>【leetcode】链表题目训练[206, 24, 141, 142, 25]</h1><h2 id="题目一：206-Reverse-Linked-List"><a href="#题目一：206-Reverse-Linked-List" class="headerlink" title="题目一：206. Reverse Linked List"></a>题目一：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-linked-list/">206. Reverse Linked List</a></h2><p>​    <strong>题目：Reverse a singly linked list.</strong></p>
+<ul>
+<li>理解：反转一个单项链表</li>
+<li>难度：easy</li>
+</ul>
+<h3 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h3><ul>
+<li>思路：头节点开始依次往后遍历链表，并更改每一个节点的next指针为前一个结点的地址</li>
+<li>代码</li>
+</ul>
+<pre class="language-c" data-language="c"><code class="language-c">class Solution <span class="token punctuation">&#123;</span>
+public<span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+        ListNode <span class="token operator">*</span>cur <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>prev <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token operator">*</span>lat <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        	cur<span class="token operator">-></span>next <span class="token operator">=</span> prev<span class="token punctuation">;</span>
+        	prev <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+        	cur <span class="token operator">=</span> lat<span class="token punctuation">;</span>
+        	<span class="token keyword">if</span><span class="token punctuation">(</span>lat <span class="token operator">!=</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> lat <span class="token operator">=</span> lat<span class="token operator">-></span>next<span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> prev<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<h2 id="题目二：24-Swap-Nodes-in-Pairs"><a href="#题目二：24-Swap-Nodes-in-Pairs" class="headerlink" title="题目二：24. Swap Nodes in Pairs"></a>题目二：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/swap-nodes-in-pairs/">24. Swap Nodes in Pairs</a></h2><p>​    <strong>题目：Given a linked list, swap every two adjacent nodes and return its head.You may not modify the values in the list’s nodes, only nodes itself may be changed.</strong></p>
+<ul>
+<li>理解：从第一个节点开始，依次反转两个相邻的节点</li>
+<li>难度：medium</li>
+</ul>
+<h3 id="解法：-1"><a href="#解法：-1" class="headerlink" title="解法："></a>解法：</h3><ul>
+<li>思路：两个节点一组，将第二个指向第一个，然后将第一个指向下一组的第二个，如此循环，如下图</li>
+</ul>
+<p><img src="http://pxjvmix9e.bkt.clouddn.com/blog/20191002/dRgjm4jJFw5N.png?imageslim" srcset="/img/loading.gif" alt="改变顺序"></p>
+<ul>
+<li>代码</li>
+</ul>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">swapPairs</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> head<span class="token operator">-></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+        ListNode <span class="token operator">*</span>cur <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">,</span> <span class="token operator">*</span>temp <span class="token operator">=</span> cur<span class="token operator">-></span>next<span class="token punctuation">,</span> <span class="token operator">*</span>prev <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>res <span class="token operator">=</span> head<span class="token operator">-></span>next<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            temp <span class="token operator">=</span> cur<span class="token operator">-></span>next<span class="token punctuation">;</span>
+            cur<span class="token operator">-></span>next <span class="token operator">=</span> prev<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>temp <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> temp<span class="token operator">-></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                prev<span class="token operator">-></span>next <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+                <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            cur <span class="token operator">=</span> temp<span class="token operator">-></span>next<span class="token punctuation">;</span>
+            prev<span class="token operator">-></span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+            prev <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<h2 id="题目三：141-Linked-List-Cycle"><a href="#题目三：141-Linked-List-Cycle" class="headerlink" title="题目三：141. Linked List Cycle"></a>题目三：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/linked-list-cycle/">141. Linked List Cycle</a></h2><p>​    <strong>题目：Given a linked list, determine if it has a cycle in it.To represent a cycle in the given linked list, we use an integer <code>pos</code> which represents the position (0-indexed) in the linked list where tail connects to. If <code>pos</code> is <code>-1</code>,then there is no cycle in the linked list.</strong></p>
+<ul>
+<li>理解：判断一个链表是否有环</li>
+<li>难度：easy</li>
+</ul>
+<h3 id="解法一："><a href="#解法一：" class="headerlink" title="解法一："></a>解法一：</h3><ul>
+<li>思路：快慢指针，创建两个指针，一个指针每次遍历两个节点，一个每次遍历一个节点，当遇到NULL则返回无环，当两个指针相遇则返回有环<ul>
+<li>缺点：时间复杂度大于O(n)</li>
+</ul>
+</li>
+</ul>
+<img src="http://pxjvmix9e.bkt.clouddn.com/blog/20191002/wJQBfmcaxCCR.png?imageslim" srcset="/img/loading.gif" alt="改变顺序" style="zoom:50%;" />
+
+<ul>
+<li>代码：</li>
+</ul>
+<pre class="language-c" data-language="c"><code class="language-c">class Solution <span class="token punctuation">&#123;</span>
+public<span class="token operator">:</span>
+    bool <span class="token function">hasCycle</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        ListNode <span class="token operator">*</span>cur <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>prev <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>temp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>cur<span class="token operator">-></span>next <span class="token operator">||</span> <span class="token operator">!</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            prev <span class="token operator">=</span> prev<span class="token operator">-></span>next<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> <span class="token punctuation">(</span>cur<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token operator">-></span>next<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>cur <span class="token operator">==</span> prev<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> true<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<h3 id="解法二："><a href="#解法二：" class="headerlink" title="解法二："></a>解法二：</h3><ul>
+<li>思路：遍历一遍，将遍历到的节点指向head，遍历过程中遇到NULL则返回无环，遍历过程中遇到head则返回有环<ul>
+<li>优点：时间复杂度O(n)</li>
+<li>缺点：更改了原有的链表</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://pxjvmix9e.bkt.clouddn.com/blog/20191002/TnUTrvF0pA4D.png?imageslim" srcset="/img/loading.gif" alt="mark"></p>
+<ul>
+<li>代码：</li>
+</ul>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">bool</span> <span class="token function">hasCycle</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        ListNode <span class="token operator">*</span>cur <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>prev <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>next <span class="token operator">==</span> head<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            prev <span class="token operator">=</span> cur<span class="token operator">-></span>next<span class="token punctuation">;</span>
+            cur<span class="token operator">-></span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+            cur <span class="token operator">=</span> prev<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<h2 id="题目四：142-Linked-List-Cycle-II"><a href="#题目四：142-Linked-List-Cycle-II" class="headerlink" title="题目四：142. Linked List Cycle II"></a>题目四：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/linked-list-cycle-ii/">142. Linked List Cycle II</a></h2><p>​    <strong>题目：Given a linked list, return the node where the cycle begins. If there is no cycle, return <code>null</code>.To representa cycle in the given linked list, we use an integer <code>pos</code> which represents the position (0-indexed) in thelinked list where tail connects to. If <code>pos</code> is <code>-1</code>, then there is no cycle in the linked list.</strong></p>
+<p>​    <strong>Note: Do not modify the linked list.</strong></p>
+<ul>
+<li>理解：141题的hard，在判定有环的基础上返回尾部所指向的节点</li>
+<li>难度：medium</li>
+</ul>
+<h3 id="解法：-2"><a href="#解法：-2" class="headerlink" title="解法："></a>解法：</h3><ul>
+<li>思路：创建一个unordered_set，然后依次遍历，将遍历到的节点的地址存放到unordered_set，然后判断当前节点的next存放的地址是否在unordered_set中存在，存在的话，则返回该地址。</li>
+<li>代码：</li>
+</ul>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode <span class="token operator">*</span><span class="token function">detectCycle</span><span class="token punctuation">(</span>ListNode <span class="token operator">*</span>head<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> head<span class="token operator">-></span>next <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+        ListNode <span class="token operator">*</span>cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        unordered_set<span class="token operator">&lt;</span>ListNode<span class="token operator">*</span><span class="token operator">></span> se<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token operator">-></span>next<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>se<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span> <span class="token operator">==</span> se<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                se<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                cur <span class="token operator">=</span> cur<span class="token operator">-></span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                <span class="token keyword">return</span> <span class="token operator">*</span>se<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>cur<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+
+
+
+<h2 id="题目五：25-Reverse-Nodes-in-k-Group"><a href="#题目五：25-Reverse-Nodes-in-k-Group" class="headerlink" title="题目五：25. Reverse Nodes in k-Group"></a>题目五：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/reverse-nodes-in-k-group/">25. Reverse Nodes in k-Group</a></h2><p>​    <strong>题目：Given a linked list, reverse the nodes of a linked list <em>k</em> at a time and return its modified list.<em>k</em> is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of <em>k</em> thenleft-out nodes in the end should remain as it is.</strong></p>
+<ul>
+<li>理解：24题的hard，原先是反转相邻两个节点的基础上，现在是反转k个节点</li>
+<li>难度：hard</li>
+</ul>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><ul>
+<li>思路：基本思路和24题相同</li>
+<li>代码：</li>
+</ul>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    ListNode<span class="token operator">*</span> <span class="token function">reverseKGroup</span><span class="token punctuation">(</span>ListNode<span class="token operator">*</span> head<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>head <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> head<span class="token operator">-></span>next <span class="token operator">==</span> <span class="token constant">NULL</span> <span class="token operator">||</span> k <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+        
+        ListNode <span class="token operator">*</span>test <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>res <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token operator">*</span>cur <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>prev <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">,</span> <span class="token operator">*</span>lat <span class="token operator">=</span> head<span class="token punctuation">,</span> <span class="token operator">*</span>temp <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> k<span class="token punctuation">,</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            n <span class="token operator">=</span> k<span class="token punctuation">;</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>test <span class="token operator">&amp;&amp;</span> n<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            	n <span class="token operator">-=</span> <span class="token number">1</span><span class="token punctuation">;</span> 
+                <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">==</span> k<span class="token punctuation">)</span> test <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+                <span class="token keyword">else</span> test <span class="token operator">=</span> test<span class="token operator">-></span>next<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>n <span class="token operator">&amp;&amp;</span> test<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                n <span class="token operator">=</span> k<span class="token punctuation">;</span>
+               
+                <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">>=</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                	temp<span class="token operator">-></span>next <span class="token operator">=</span> test<span class="token punctuation">;</span>
+                	temp <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+				<span class="token punctuation">&#125;</span> 
+                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>res<span class="token punctuation">)</span> res <span class="token operator">=</span> test<span class="token punctuation">;</span>
+                <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    lat <span class="token operator">=</span> lat<span class="token operator">-></span>next<span class="token punctuation">;</span>
+                    cur<span class="token operator">-></span>next <span class="token operator">=</span> prev<span class="token punctuation">;</span>
+                    prev <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+                    cur <span class="token operator">=</span> lat<span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            	<span class="token keyword">return</span> head<span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+                temp<span class="token operator">-></span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+                <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/">单向链表</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Leetcode/">Leetcode</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/47786f48/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">POJ 1321 棋盘问题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <script type="text/javascript">
+    function loadUtterances() {
+      var light = 'github-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'oopstls/oopstls.github.io');
+      s.setAttribute('issue-term', 'pathname');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    }
+    waitElementVisible('comments', loadUtterances)
+  </script>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="http://beian.miit.gov.cn/" target="_blank"
+       rel="nofollow noopener">蜀ICP备20023873号</a>
+    
+  </div>
+
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+    
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "leetcode单向链表[206, 24, 141, 142, 25]&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 50,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "❡"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
