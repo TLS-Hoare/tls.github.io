@@ -12,3 +12,10 @@
   box-shadow:20px 0 #fdbc40,40px 0 #35cd4b;
   z-index:2
 }
+
+img:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+  position: relative;
+  z-index: 1;
+}
