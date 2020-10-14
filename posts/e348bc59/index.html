@@ -201,7 +201,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.4k 字
+      3.2k 字
     </span>
   
 
@@ -211,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      26
+      36
        分钟
     </span>
   
@@ -245,21 +245,21 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年6月11日 晚上
+                  本文最后更新于：2020年10月14日 晚上
                 
               </p>
             
             <div class="markdown-body" id="post-body">
               <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>19年8月份开始部署自己的独立博客到现在已经过去了10个月了，这期间断断续续做了很多修改，也踩了很多坑。这几天换了个域名，换了个主题，完全重新部署了博客，现在用起来感觉还不错，应该会持续用一段时间，所以现在写这篇文章总结一下博客部署的细节过程，避免我这个记性不好的人过段时间就不记得自己是怎么操作的了😂，网上有很多大佬写的Github Pages + hexo部署博客的教程，我这里主要是记录我自己的操作步骤和一些我自己的理解。我不是一个专业的前端程序员，所以如果在看这篇文章的大佬发现了错误，请指出。</p>
-<p>最早部署博客的时候，我还是一个大一的学生，很多东西都不太懂，在网上看了很多关于部署博客文章，明白了部署博客的方法之一就是用现有的框架，然后自己做个性化的调整，找了一圈发现目前比较流行、<u>搭建简单</u>适合我这个蒟蒻的框架是<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a>，看了官方文档和其他大佬的搭建教程，心里大概有了个底就开始找好看的主题了，去年部署使用了<a target="_blank" rel="noopener" href="https://blinkfox.github.io/">闪烁之狐</a>大佬的<a target="_blank" rel="noopener" href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/">matery</a>主题，我这个喜新厌旧的渣男这么几个月过去了有一些视觉疲劳了😂，现在改成了<a target="_blank" rel="noopener" href="https://zkqiang.cn/">zkqing</a>大佬的<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">Fluid</a>，这个简洁又有设计感的风格，我很是喜欢。</p>
+<p>最早部署博客的时候，我还是一个大一的学生，很多东西都不太懂，在网上看了很多关于部署博客文章，明白了部署博客的方法之一就是用现有的框架，然后自己做个性化的调整，找了一圈发现目前比较流行、<u>搭建简单</u>适合我这个蒟蒻的框架是<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a>，看了官方文档和其他大佬的搭建教程，就开始找好看的主题了，去年部署使用了<a target="_blank" rel="noopener" href="https://blinkfox.github.io/">闪烁之狐</a>大佬的<a target="_blank" rel="noopener" href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/">matery</a>主题，作为一个喜新厌旧的渣男这么几个月过去了有一些视觉疲劳了😂，现在改成了<a target="_blank" rel="noopener" href="https://zkqiang.cn/">zkqing</a>大佬的<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">Fluid</a>，这个简洁又有设计感的风格，很是喜欢。</p>
 <blockquote>
-<p>hexo是一个基于nodejs的静态站点生成框架，不仅搭建简单，还可以将生成的博客直接上传到<a href="github.com">github</a>、<a href="gitlab.com">gitlab</a>、<a href="gitee.com">gitee</a>这样的平台，使用平台的Pages(下面会对Pages服务做介绍)服务建立静态站点，而且社区生态活跃，有大量有趣实用的插件可供下载。通过hexo，即使我们不怎么会HTML也可以用markdown写出工整的文章，markdown是一种轻量级的标记语言，文件扩展名是“md”，就是在项目文件里常见的README.md文件使用的格式。markdown的语法超级超级超级简单，没有哪个正常人20分钟还学不会基础语法的吧，不会吧，不会吧。话说回来markdown只是一个语法规范，所以我们还需要一个工具来辅助我们编写markdown文件，我强烈推荐<a target="_blank" rel="noopener" href="https://typora.io/">Typora</a>，不用像vscode那样分屏预览，所见即所得的书写体验是真的awesome。</p>
+<p>hexo是一个基于nodejs的静态站点生成框架，不仅搭建简单，还可以将生成的博客直接上传到<a href="github.com">github</a>、<a href="gitlab.com">gitlab</a>、<a href="gitee.com">gitee</a>这些提供Pages服务的平台(下面会对Pages服务做介绍)服务建立静态站点，而且社区生态活跃，有大量有趣实用的插件可供下载。通过hexo，即使我们不怎么会HTML也可以用markdown写出工整的文章，markdown是一种轻量级的标记语言，文件扩展名是“md”，就是在项目文件里常见的README.md文件使用的格式。markdown的语法超级超级超级简单，没有哪个正常人20分钟还学不会基础语法的吧，不会吧，不会吧。话说回来markdown只是一个语法规范，所以我们还需要一个工具来辅助我们编写markdown文件，强烈推荐<a target="_blank" rel="noopener" href="https://typora.io/">Typora</a>，不用像vscode那样分屏预览，所见即所得的书写体验是真的awesome。</p>
 </blockquote>
 <blockquote>
-<p>“You can create a website directly from a GitHub repository.”，这是<a target="_blank" rel="noopener" href="https://help.github.com/cn/github/working-with-github-pages/getting-started-with-github-pages">Github Pages官方文档</a>里面的介绍，我们可以直接从Github仓库创建网站，通过Github Pages，我们就可以不用自己维护一台服务器来托管博客，省钱又省心。</p>
+<p>“You can create a website directly from a GitHub repository.”，这是<a target="_blank" rel="noopener" href="https://help.github.com/cn/github/working-with-github-pages/getting-started-with-github-pages">Github Pages官方文档</a>里面的介绍，我们可以直接从Github仓库创建静态网站，通过Github Pages，我们就可以不用自己维护一台服务器来托管博客，省钱又省心。</p>
 </blockquote>
 <blockquote>
-<p>我全程使用的是window10环境，其他环境不同的步骤自行变通。</p>
+<p>全程使用的是window10环境。</p>
 </blockquote>
 <hr>
 <h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><p>在这里下载适合自己的<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">nodejs</a>。</p>
@@ -283,7 +283,7 @@
 <p>安装完成后打开终端，输入：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> --verison</code></pre>
 
-<h3 id="添加代理"><a href="#添加代理" class="headerlink" title="添加代理"></a>添加代理</h3><p>git没有国内镜像(这个要是有国内镜像那是真的强/狗头)，如果你没有梯子的话，那你<code>git clone</code>可能会很慢，有梯子选择下面的一个操作即可：</p>
+<h3 id="添加代理"><a href="#添加代理" class="headerlink" title="添加代理"></a>添加代理</h3><p>git没有国内镜像(这个要是有国内镜像那是真的强/狗头)，如果没有梯子的话，那<code>git clone</code>可能会很慢，有梯子可以设置一下代理，如下：</p>
 <h4 id="全局代理"><a href="#全局代理" class="headerlink" title="全局代理"></a>全局代理</h4><pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># socks5协议，1080端口修改成自己的本地代理端口</span>
 <span class="token function">git</span> config --global http.proxy socks5://127.0.0.1:1080
 <span class="token function">git</span> config --global https.proxy socks5://127.0.0.1:1080</code></pre>
@@ -324,17 +324,17 @@
 <hr>
 <h2 id="创建博客仓库"><a href="#创建博客仓库" class="headerlink" title="创建博客仓库"></a>创建博客仓库</h2><p>不会还有人需要注册github的详细步骤吧，不会吧，不会吧。</p>
 <p>在github首页点击右上角的<code>+</code>号，选择<code>New repository</code></p>
-<p><img src="https://gitee.com/TLS-Hoare/PicBed/raw/master/blog/blog/image-20200610215943623.png" srcset="/img/loading.gif" alt="新建仓库"></p>
+<p><img src="https://gitee.com/oopstls/PicBed/raw/master/blog/blog/image-20200610215943623.png" srcset="/img/loading.gif" alt="新建仓库"></p>
 <p>然后在如下页面中填写仓库名(Repository name)</p>
 <blockquote>
 <p>**一般这里的格式都是且必须是username.github.io (username就是前面<code>Owner</code>里面显示的名字)**，原因如下。</p>
 <p>仓库名命名为<code>username.github.io</code>那么访问通过该仓库创建的博客的默认域名就是<code>username.github.io</code>。</p>
-<p>仓库名命名为<code>xxx.github.io</code>，访问地址就是<code>username.github.io/xxx.github.io</code>，但是这里有一个我很不明白的地方，我第一次搭建的时候，仓库命名用的是<code>Public profile</code>里面的name，区分用户名算是昵称吧，但是可以直接用自己的域名解析到<code>name.github.io</code>，当时我的仓库名是<code>tls.github.io</code>，请明白的大佬告知。</p>
+<p>仓库名命名为<code>xxx.github.io</code>，访问地址就是<code>username.github.io/xxx.github.io</code>。</p>
 </blockquote>
-<p>这里我用<code>sameple.github.io</code>作为样例。</p>
+<p>我的username是oopstls，但是这里我用<code>sameple.github.io</code>作为样例。</p>
 <p><code>Description</code>是对这个仓库的描述。</p>
 <p><strong>后面的<code>README</code>一定要勾选，不然后面不能初始化Github Pages。</strong></p>
-<p><code>Imgbot</code>是我用来给我的github图床里面的图片压缩的，没有使用过就没有这个选项，没有影响。</p>
+<p><em><code>Imgbot</code>是我用来给我的github图床里面的图片压缩的，没有使用过就没有这个选项，不影响后序操作。</em></p>
 <p>然后点击下面的绿色按钮<code>Create repository</code>。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/blog/image-20200611143035975.png" srcset="/img/loading.gif" alt="创建博客"></p>
 <p>然后点击仓库的<code>setting</code>。</p>
@@ -346,17 +346,18 @@
 <p>然后在刚刚Github Pages设置的位置就会显示你的默认链接。</p>
 <p>点击进去就是Github Pages为你生成的个人页面。</p>
 <hr>
-<h2 id="安装初始化Hexo"><a href="#安装初始化Hexo" class="headerlink" title="安装初始化Hexo"></a>安装初始化Hexo</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>打开一个已经配置好可以执行npm命令的终端，可以直接用前面安装的git自带的Git Bash。</p>
-<p>输入如下命令安装hexo命令行工具。</p>
+<h2 id="安装初始化Hexo"><a href="#安装初始化Hexo" class="headerlink" title="安装初始化Hexo"></a>安装初始化Hexo</h2><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>打开一个已经配置好可以执行npm命令行终端，可以直接用前面安装的git自带的Git Bash。</p>
+<p>输入如下命令安装<b>hexo命令行工具<b/>。</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-cli -g</code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/blog/image-20200611154949704.png" srcset="/img/loading.gif" alt="install"></p>
 <p>输入命令后如上图所示就安装成功了，也可以再输入命令<code>hexo -v</code>看看。</p>
-<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>在你想用来存放博客文件的存储路径上新建一个文件夹，这个文件夹用来存储博客文件，比如<code>D:\Blog\sample</code>。</p>
-<p>然后再这个目录下打开终端，或者<code>cd /d/blog/sample</code>(注意这里是我的目录路径，以你自己的为准)</p>
+<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>在你想用来存放博客文件的存储路径上新建一个文件夹，这个文件夹用来存储博客文件，比如<code>D:\Blog\</code>。</p>
+<p>然后再这个目录下打开终端，或者<code>cd /d/blog</code>(注意这里是我的目录路径，以当前自己的为准，不能随意复制)</p>
 <p>然后执行下面这条命令初始化你的博客文件。</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash">hexo init</code></pre>
+<pre class="language-bash" data-language="bash"><code class="language-bash">hexo init sample </code></pre>
 
+<p>sample是生成后存储文件的文件夹</p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/blog/image-20200611160633299.png" srcset="/img/loading.gif" alt="INFO"></p>
 <p>命令执行完成显示上图所示内容就可以了。</p>
 <p>接着就执行<code>npm install</code>安装必要的组件。</p>
@@ -373,9 +374,81 @@ hexo deploy <span class="token comment">#部署网站，需要先generate生成�
 hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo s <span class="token comment">#本地测试的时候可以这么写</span></code></pre>
 
 <p>现在执行<code>hexo g &amp;&amp; hexo s</code></p>
-<p>然后打开浏览器，在地址栏输入<code>localhost:4000</code>，就可以看到博客页面了。</p>
-<p><img src="https://gitee.com/TLS-Hoare/PicBed/raw/master/blog/blog/image-20200611165033743.png" srcset="/img/loading.gif" alt="local"></p>
-<p><em>后面的改天再写</em>😂</p>
+<p>然后打开浏览器，在地址栏输入<code>localhost:4000</code>，就可以看到初始博客页面了。</p>
+<p><img src="https://gitee.com/oopstls/PicBed/raw/master/blog/blog/image-20200611165033743.png" srcset="/img/loading.gif" alt="local"></p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h3 id="根目录"><a href="#根目录" class="headerlink" title="根目录"></a>根目录</h3><pre class="language-bash" data-language="bash"><code class="language-bash">├── _config.yml				<span class="token comment">#博客配置文件</span>
+├── node_modules			
+├── package-lock.json
+├── package.json
+├── scaffolds				<span class="token comment">#草稿、文章模板、页面模板</span>
+├── <span class="token builtin class-name">source</span>					<span class="token comment">#资源文件夹</span>
+└── themes					<span class="token comment">#主题文件夹</span></code></pre>
+
+<h3 id="source目录下"><a href="#source目录下" class="headerlink" title="source目录下"></a>source目录下</h3><p><em>没有的文件夹不是自动生成的，而是推荐使用方式（后面介绍）</em></p>
+<pre class="language-none"><code class="language-none">├── source
+│   ├── CNAME							#自定义域名
+│   ├── _data							#覆盖主题配置
+│   │   ├── fluid_config.yml			#fluid主题覆盖配置
+│   │   └── fluid_static_prefix.yml
+│   ├── _posts							#文章存储文件夹
+│   │   └── helloworld.md
+│   ├── about							#自定义关于页
+│   │   └── index.md
+│   └── img								#作为主题的图片资源文件夹
+│       ├── avatar.png
+│       ├── banner
+│       ├── favicon.png</code></pre>
+
+
+
+
+
+<h1 id="个性化"><a href="#个性化" class="headerlink" title="个性化"></a>个性化</h1><h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>前面hexo初始化完成之后，默认使用的是<code>landspace</code>主题。除了自带的主题外，<a target="_blank" rel="noopener" href="https://hexo.io/themes/">hexo官网</a>还罗列了很多好看的主题可供查看和使用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014164742396.png" srcset="/img/loading.gif" alt="image-20201014164742396"></p>
+<p>选择自己喜欢的主题，下载至<code>/theme</code>文件夹，然后再<code>/_config.yml</code>文件中修改<code>theme: landspace</code>，将landspace改为主题存储的文件夹名。</p>
+<p>在hexo5之后，可以直接使用npm命令下载主题，但是下载的主题是存放在<code>/node_modules</code>文件夹下的，需要自定义修改一些东西的时候不是很方便(只改配置文件可以在<code>/source/_data/</code>下覆盖主题配置文件)。</p>
+<p>不同的主题配置方式各不相同，hexo官网列出的主题大多都有较详细的配置说明，可以在主题的github仓库查看README.md文件。</p>
+<p>我现在(至文章最后一次更新)使用的是<a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a>，主题安装过程以及配置过程就不具体演示了，<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">官方说明非常详细</a>。</p>
+<h1 id="生成以及上传"><a href="#生成以及上传" class="headerlink" title="生成以及上传"></a>生成以及上传</h1><p>前面已经介绍过博客的生成命令。</p>
+<p>这里再贴一下。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">hexo clean <span class="token comment">#清除已经生成的静态站点文件，最好每次生成之前都clean一下</span>
+hexo generate <span class="token comment">#生成静态站点文件,生成内容在根目录下的public文件夹内</span>
+hexo g <span class="token comment">#上一个命令的简写</span>
+hexo server <span class="token comment">#启动服务器。默认情况下，访问网址为： http://localhost:4000/</span>
+hexo s <span class="token comment">#上一个命令的简写</span>
+hexo deploy <span class="token comment">#部署网站，需要先generate生成静态文件才能部署</span>
+hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo s <span class="token comment">#本地测试的时候可以这么写</span></code></pre>
+
+<p><code>hexo deploy</code>需要先安装对应平台的deploy插件</p>
+<p>如github pages，需要执行下命令安装插件。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save</code></pre>
+
+<p>当本地测试完成之后，执行<code>hexo d</code>即可上传至仓库。</p>
+<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p>github pages默认的域名是<code>username.github.io</code>。</p>
+<p>建议改为自己的域名的几个原因：</p>
+<ol>
+<li>不够个性化</li>
+<li>不能做cdn加速(国内访问gituhb.io很慢)</li>
+<li>上一条说访问慢，现在貌似已经被墙了(202008xx)，不改域名想访问只能修改自己本机的DNS。</li>
+</ol>
+<h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>在国内几个大厂都可以购买，如阿里云、腾讯云、百度云…</p>
+<p>购买域名的详细过程大概就是实名、选域名、买域名。</p>
+<p>无脑操作，具体过程就不赘述了。</p>
+<h2 id="使用Cloudflare解析域名"><a href="#使用Cloudflare解析域名" class="headerlink" title="使用Cloudflare解析域名"></a>使用Cloudflare解析域名</h2><p>我这里以阿里云为例</p>
+<h3 id="注册cloudflare"><a href="#注册cloudflare" class="headerlink" title="注册cloudflare"></a>注册<a target="_blank" rel="noopener" href="https://cloudflare.com/">cloudflare</a></h3><p>注册过程就不详细展示了</p>
+<h3 id="添加站点"><a href="#添加站点" class="headerlink" title="添加站点"></a>添加站点</h3><p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014174143276.png" srcset="/img/loading.gif" alt="image-20201014174143276"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014174633561.png" srcset="/img/loading.gif" alt="image-20201014174633561"></p>
+<p>填写购买的域名，然后点击添加站点，然后无脑下一步，直到提示修改DNS服务器。</p>
+<h3 id="修改域名DNS服务器"><a href="#修改域名DNS服务器" class="headerlink" title="修改域名DNS服务器"></a>修改域名DNS服务器</h3><p>打开阿里云域名控制台，点击准备好的域名。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014175006245.png" srcset="/img/loading.gif" alt="image-20201014175006245"></p>
+<p>然后点击DNS修改、修改DNS服务器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014175611777.png" srcset="/img/loading.gif" alt="image-20201014175611777"></p>
+<p>将刚才Cloudflare给出的两个域名解析服务器粘贴至这里。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014181139698.png" srcset="/img/loading.gif" alt="image-20201014181139698"></p>
+<p>点击确定之后返回Cloudflare点击检查。</p>
+<p>等cloudflare检查完成之后执行下面的操作，这个过程会等几分钟到几个小时不等。</p>
+<h3 id="添加CNAME解析，并使用cdn加速"><a href="#添加CNAME解析，并使用cdn加速" class="headerlink" title="添加CNAME解析，并使用cdn加速"></a>添加CNAME解析，并使用cdn加速</h3><p>上面点击DNS，然后添加记录，两个记录都是CNAME，分别填入域名和www。确定后面的代理状态为开就可以了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014180747647.png" srcset="/img/loading.gif" alt="image-20201014180747647"></p>
 
             </div>
             <hr>
