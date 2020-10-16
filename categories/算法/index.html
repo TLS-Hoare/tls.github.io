@@ -185,12 +185,18 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 10 篇文章</p>
+  <p class="h4">共计 11 篇文章</p>
   <hr>
   
     
       
       <p class="h5">2020</p>
+    
+    <a href="/posts/undefined/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">背包九讲笔记-01背包</span>
+      <time style="float: right;">10-16</time>
+    </a>
+  
     
     <a href="/posts/5b4e49b2/" class="list-group-item list-group-item-action">
       <span class="archive-post-title">几个排序算法的模板略解</span>
@@ -248,13 +254,19 @@
       <time style="float: right;">11-02</time>
     </a>
   
-    
-    <a href="/posts/47786f48/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">POJ 1321 棋盘问题</span>
-      <time style="float: right;">11-01</time>
-    </a>
-  
 </div>
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/categories/%E7%AE%97%E6%B3%95/page/2/">2</a><a class="extend next" rel="next" href="/categories/%E7%AE%97%E6%B3%95/page/2/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
@@ -300,17 +312,13 @@
 
   
 
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
-    
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
 
-    
+  
   <!-- 备案信息 -->
   <div class="beian">
     <a href="http://beian.miit.gov.cn/" target="_blank"
@@ -319,8 +327,7 @@
   </div>
 
 
-    
-  </div>
+  
 </footer>
 
 <!-- SCRIPTS -->

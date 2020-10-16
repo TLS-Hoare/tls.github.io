@@ -434,12 +434,12 @@ hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="to
 <h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>在国内几个大厂都可以购买，如阿里云、腾讯云、百度云…</p>
 <p>购买域名的详细过程大概就是实名、选域名、买域名。</p>
 <p>无脑操作，具体过程就不赘述了。</p>
-<h2 id="使用Cloudflare解析域名"><a href="#使用Cloudflare解析域名" class="headerlink" title="使用Cloudflare解析域名"></a>使用Cloudflare解析域名</h2><p>我这里以阿里云为例</p>
+<h2 id="Cloudflare"><a href="#Cloudflare" class="headerlink" title="Cloudflare"></a>Cloudflare</h2><p>我这里以阿里云为例</p>
 <h3 id="注册cloudflare"><a href="#注册cloudflare" class="headerlink" title="注册cloudflare"></a>注册<a target="_blank" rel="noopener" href="https://cloudflare.com/">cloudflare</a></h3><p>注册过程就不详细展示了</p>
 <h3 id="添加站点"><a href="#添加站点" class="headerlink" title="添加站点"></a>添加站点</h3><p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014174143276.png" srcset="/img/loading.gif" alt="image-20201014174143276"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014174633561.png" srcset="/img/loading.gif" alt="image-20201014174633561"></p>
 <p>填写购买的域名，然后点击添加站点，然后无脑下一步，直到提示修改DNS服务器。</p>
-<h3 id="修改域名DNS服务器"><a href="#修改域名DNS服务器" class="headerlink" title="修改域名DNS服务器"></a>修改域名DNS服务器</h3><p>打开阿里云域名控制台，点击准备好的域名。</p>
+<h3 id="修DNS服务器"><a href="#修DNS服务器" class="headerlink" title="修DNS服务器"></a>修DNS服务器</h3><p>打开阿里云域名控制台，点击准备好的域名。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014175006245.png" srcset="/img/loading.gif" alt="image-20201014175006245"></p>
 <p>然后点击DNS修改、修改DNS服务器</p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014175611777.png" srcset="/img/loading.gif" alt="image-20201014175611777"></p>
@@ -447,7 +447,7 @@ hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="to
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014181139698.png" srcset="/img/loading.gif" alt="image-20201014181139698"></p>
 <p>点击确定之后返回Cloudflare点击检查。</p>
 <p>等cloudflare检查完成之后执行下面的操作，这个过程会等几分钟到几个小时不等。</p>
-<h3 id="添加CNAME解析，并使用cdn加速"><a href="#添加CNAME解析，并使用cdn加速" class="headerlink" title="添加CNAME解析，并使用cdn加速"></a>添加CNAME解析，并使用cdn加速</h3><p>上面点击DNS，然后添加记录，两个记录都是CNAME，分别填入域名和www。确定后面的代理状态为开就可以了。</p>
+<h3 id="解析加速"><a href="#解析加速" class="headerlink" title="解析加速"></a>解析加速</h3><p>上面点击DNS，然后添加记录，两个记录都是CNAME，分别填入域名和www。确定后面的代理状态为开就可以了。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014180747647.png" srcset="/img/loading.gif" alt="image-20201014180747647"></p>
 
             </div>
@@ -595,17 +595,13 @@ hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="to
 
   
 
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
-    
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
 
-    
+  
   <!-- 备案信息 -->
   <div class="beian">
     <a href="http://beian.miit.gov.cn/" target="_blank"
@@ -614,8 +610,7 @@ hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="to
   </div>
 
 
-    
-  </div>
+  
 </footer>
 
 <!-- SCRIPTS -->

@@ -19,7 +19,7 @@
   <meta name="description" content="acm | algorithm | blog | ctf | ml">
   <meta name="author" content="TLS">
   <meta name="keywords" content="ACM, Algorithm, CTF">
-  <title>标签 - hexo - TLS&#39;s Blog</title>
+  <title>分类 - 算法 - TLS&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -49,7 +49,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 60vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -155,7 +155,7 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('/img/banner/banner_tag.png') no-repeat center center;
+         style="background: url('/img/banner/banner_categorise.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -185,19 +185,31 @@
                 
 
 <div class="list-group">
-  <p class="h4">共计 1 篇文章</p>
+  <p class="h4">共计 11 篇文章</p>
   <hr>
   
     
       
-      <p class="h5">2020</p>
+      <p class="h5">2019</p>
     
-    <a href="/posts/e348bc59/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">记录一下博客搭建历程</span>
-      <time style="float: right;">06-10</time>
+    <a href="/posts/47786f48/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">POJ 1321 棋盘问题</span>
+      <time style="float: right;">11-01</time>
     </a>
   
 </div>
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/categories/%E7%AE%97%E6%B3%95/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/categories/%E7%AE%97%E6%B3%95/">1</a><span class="page-number current">2</span>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
 
 
 
@@ -302,7 +314,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签 - hexo&nbsp;",
+        "分类 - 算法&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 50,
