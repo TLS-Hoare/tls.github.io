@@ -298,8 +298,6 @@
 </div>
 <div class="mt-5 markdown-body">
   <article class="comments" id="comments">
-
-
   <div id="vcomments" class=" v" data-class="v">
     <div class="vpanel">
       <div class="vwrap">
@@ -315,7 +313,8 @@
         <div class="vheader item3"><input name="nick" placeholder="昵称" class="vnick vinput" type="text"><input
             name="mail" placeholder="邮箱" class="vmail vinput" type="email"><input name="link" placeholder="网址(http://)"
             class="vlink vinput" type="text"></div>
-        <div class="vedit"><textarea id="veditor" class="veditor vinput" placeholder="说点什么"></textarea>
+        <div class="vedit"><textarea id="veditor" class="veditor vinput"
+            placeholder="说点什么 (上面昵称框填入QQ号自动获取昵称和头像)"></textarea>
           <div class="vrow">
             <div class="vcol vcol-60 status-bar"></div>
             <div class="vcol vcol-40 vctrl text-right"><span title="表情" class="vicon vemoji-btn"><svg
@@ -383,7 +382,7 @@
           el: "#vcomments",
           app_id: "985AXniz2mJm6mqdLoJKmjw2-gzGzoHsz",
           app_key: "qUqUS79rjYGGwq9ICconteoz",
-          placeholder: "说点什么",
+          placeholder: "说点什么 (上面昵称框填入QQ号自动获取昵称和头像)",
           path: window.location.pathname,
           avatar: "retro",
           meta: ["nick", "mail", "link"],
@@ -392,14 +391,126 @@
           highlight: true,
           recordIP: true,
           serverURLs: "https://985axniz.lc-cn-n1-shared.com",
+          requiredFields: ["nick", "mail"],
+          enableQQ: true,
         });
       });
     }
     waitElementVisible('vcomments', loadValine);
   </script>
-  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org"
-      rel="nofollow noopener noopener">comments
-      powered by Valine.</a></noscript>
+  <noscript>Please enable JavaScript to view the &amp;amp;amp;amp;amp;amp;lt;a target="_blank"
+    href="https://valine.&amp;amp;amp;amp;amp;lt;xhighlight class="THmo acWHSet" data="&amp;amp;amp;amp;lt;xhighlight
+    class="THmo acWHSet" data="&amp;amp;amp;lt;xhighlight class="THmo acWHSet" data="&amp;amp;lt;xhighlight class="THmo
+    acWHSet" data="&amp;lt;xhighlight class="THmo acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight
+      class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight
+      class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;"
+    txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;"
+    txhidy15="acWHSet"&amp;amp;gt;&amp;lt;xhighlight class="THmo acWHSet" data="&lt;xhighlight class="THmo acWHSet"
+    data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;"
+    txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;&amp;amp;lt;/xhighlight&amp;amp;gt;"
+    txhidy15="acWHSet"&amp;amp;amp;gt;&amp;amp;lt;xhighlight class="THmo acWHSet" data="&amp;lt;xhighlight class="THmo
+    acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;" txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo
+    acWHSet" data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;" txhidy15="acWHSet"&amp;amp;gt;&amp;lt;xhighlight class="THmo
+    acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;" txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo
+    acWHSet" data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;&amp;amp;lt;/xhighlight&amp;amp;gt;&amp;amp;amp;lt;/xhighlight&amp;amp;amp;gt;"
+    txhidy15="acWHSet"&amp;amp;amp;amp;gt;&amp;amp;amp;lt;xhighlight class="THmo acWHSet" data="&amp;amp;lt;xhighlight
+    class="THmo acWHSet" data="&amp;lt;xhighlight class="THmo acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight
+      class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;"
+    txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;"
+    txhidy15="acWHSet"&amp;amp;gt;&amp;lt;xhighlight class="THmo acWHSet" data="&lt;xhighlight class="THmo acWHSet"
+    data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;"
+    txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;&amp;amp;lt;/xhighlight&amp;amp;gt;"
+    txhidy15="acWHSet"&amp;amp;amp;gt;&amp;amp;lt;xhighlight class="THmo acWHSet" data="&amp;lt;xhighlight class="THmo
+    acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;" txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo
+    acWHSet" data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;" txhidy15="acWHSet"&amp;amp;gt;&amp;lt;xhighlight class="THmo
+    acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;" txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo
+    acWHSet" data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;&amp;amp;lt;/xhighlight&amp;amp;gt;&amp;amp;amp;lt;/xhighlight&amp;amp;amp;gt;&amp;amp;amp;amp;lt;/xhighlight&amp;amp;amp;amp;gt;"
+    txhidy15="acWHSet"&amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;lt;xhighlight class="THmo acWHSet"
+    data="&amp;amp;amp;lt;xhighlight class="THmo acWHSet" data="&amp;amp;lt;xhighlight class="THmo acWHSet"
+    data="&amp;lt;xhighlight class="THmo acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight
+      class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight
+      class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;"
+    txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;"
+    txhidy15="acWHSet"&amp;amp;gt;&amp;lt;xhighlight class="THmo acWHSet" data="&lt;xhighlight class="THmo acWHSet"
+    data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;"
+    txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;&amp;amp;lt;/xhighlight&amp;amp;gt;"
+    txhidy15="acWHSet"&amp;amp;amp;gt;&amp;amp;lt;xhighlight class="THmo acWHSet" data="&amp;lt;xhighlight class="THmo
+    acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;" txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo
+    acWHSet" data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;" txhidy15="acWHSet"&amp;amp;gt;&amp;lt;xhighlight class="THmo
+    acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;" txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo
+    acWHSet" data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;&amp;amp;lt;/xhighlight&amp;amp;gt;&amp;amp;amp;lt;/xhighlight&amp;amp;amp;gt;"
+    txhidy15="acWHSet"&amp;amp;amp;amp;gt;&amp;amp;amp;lt;xhighlight class="THmo acWHSet" data="&amp;amp;lt;xhighlight
+    class="THmo acWHSet" data="&amp;lt;xhighlight class="THmo acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight
+      class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;"
+    txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;"
+    txhidy15="acWHSet"&amp;amp;gt;&amp;lt;xhighlight class="THmo acWHSet" data="&lt;xhighlight class="THmo acWHSet"
+    data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;"
+    txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;&amp;amp;lt;/xhighlight&amp;amp;gt;"
+    txhidy15="acWHSet"&amp;amp;amp;gt;&amp;amp;lt;xhighlight class="THmo acWHSet" data="&amp;lt;xhighlight class="THmo
+    acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;" txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo
+    acWHSet" data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;" txhidy15="acWHSet"&amp;amp;gt;&amp;lt;xhighlight class="THmo
+    acWHSet" data="&lt;xhighlight class="THmo acWHSet" data="<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;<xhighlight class="THmo acWHSet" data="js"
+      txhidy15="acWHSet">js</xhighlight>&lt;/xhighlight&gt;" txhidy15="acWHSet"&amp;gt;&lt;xhighlight class="THmo
+    acWHSet" data="<xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>" txhidy15="acWHSet"&gt;
+    <xhighlight class="THmo acWHSet" data="js" txhidy15="acWHSet">js</xhighlight>
+    &lt;/xhighlight&gt;&amp;lt;/xhighlight&amp;gt;&amp;amp;lt;/xhighlight&amp;amp;gt;&amp;amp;amp;lt;/xhighlight&amp;amp;amp;gt;&amp;amp;amp;amp;lt;/xhighlight&amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;lt;/xhighlight&amp;amp;amp;amp;amp;gt;.org"
+    rel="nofollow noopener noopener"&amp;amp;amp;amp;amp;amp;gt;comments
+    powered by Valine.&amp;amp;amp;amp;amp;amp;lt;/a&amp;amp;amp;amp;amp;amp;gt;</noscript>
 </article>
 </div>
 

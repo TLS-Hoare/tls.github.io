@@ -245,7 +245,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2020年10月14日 晚上
+                  本文最后更新于：2020年10月17日 下午
                 
               </p>
             
@@ -439,7 +439,7 @@ hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="to
 <h3 id="添加站点"><a href="#添加站点" class="headerlink" title="添加站点"></a>添加站点</h3><p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014174143276.png" srcset="/img/loading.gif" alt="image-20201014174143276"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014174633561.png" srcset="/img/loading.gif" alt="image-20201014174633561"></p>
 <p>填写购买的域名，然后点击添加站点，然后无脑下一步，直到提示修改DNS服务器。</p>
-<h3 id="修DNS服务器"><a href="#修DNS服务器" class="headerlink" title="修DNS服务器"></a>修DNS服务器</h3><p>打开阿里云域名控制台，点击准备好的域名。</p>
+<h3 id="修改DNS服务器"><a href="#修改DNS服务器" class="headerlink" title="修改DNS服务器"></a>修改DNS服务器</h3><p>打开阿里云域名控制台，点击准备好的域名。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014175006245.png" srcset="/img/loading.gif" alt="image-20201014175006245"></p>
 <p>然后点击DNS修改、修改DNS服务器</p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/note/POCC/image-20201014175611777.png" srcset="/img/loading.gif" alt="image-20201014175611777"></p>
@@ -511,31 +511,32 @@ hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="to
               <article class="comments" id="comments">
                 
                 
-  <div id="vcomments"></div>
-  <script type="text/javascript">
-    function loadValine() {
-      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
-        new Valine({
-          el: "#vcomments",
-          app_id: "985AXniz2mJm6mqdLoJKmjw2-gzGzoHsz",
-          app_key: "qUqUS79rjYGGwq9ICconteoz",
-          placeholder: "说点什么",
-          path: window.location.pathname,
-          avatar: "retro",
-          meta: ["nick","mail","link"],
-          pageSize: "10",
-          lang: "zh-CN",
-          highlight: true,
-          recordIP: true,
-          serverURLs: "https://985axniz.lc-cn-n1-shared.com",
-        });
+<div id="vcomments"></div>
+<script type="text/javascript">
+  function loadValine() {
+    addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+      new Valine({
+        el: "#vcomments",
+        app_id: "985AXniz2mJm6mqdLoJKmjw2-gzGzoHsz",
+        app_key: "qUqUS79rjYGGwq9ICconteoz",
+        placeholder: "说点什么 (上面昵称框填入QQ号自动获取昵称和头像)",
+        path: window.location.pathname,
+        avatar: "retro",
+        meta: ["nick","mail","link"],
+        pageSize: "10",
+        lang: "zh-CN",
+        highlight: true,
+        recordIP: true,
+        serverURLs: "https://985axniz.lc-cn-n1-shared.com",
+        requiredFields: ["nick","mail"],
+        enableQQ: true,
       });
-    }
-    waitElementVisible('vcomments', loadValine);
-  </script>
-  <noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
-      powered by Valine.</a></noscript>
-
+    });
+  }
+  waitElementVisible('vcomments', loadValine);
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+    powered by Valine.</a></noscript>
 
               </article>
             
