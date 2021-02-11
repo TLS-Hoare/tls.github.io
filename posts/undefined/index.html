@@ -253,8 +253,8 @@
               <blockquote>
 <p>上学期开学前一段时间，学校就让我们在学习通上打卡，用来确定每个同学返校前的健康状况？这学期又是这样的操作，而且要求的更严格了，放寒假还天天被人吹着打卡，就很无语。讲道理哪个同学有异常情况的话，会直接通知到学校的吧。所以我个人觉得这个打卡没什么意义，而且我天天宅在家里，应该不会有什么异常情况，所以搞一个自动打卡应该没问题吧😂。</p>
 </blockquote>
-<h1 id="1-分析打卡流程"><a href="#1-分析打卡流程" class="headerlink" title="1 分析打卡流程"></a>1 分析打卡流程</h1><p>平时打卡都是在学习通APP上进行的，所以直接在手机抓包分析。</p>
-<h2 id="1-1-登录流程"><a href="#1-1-登录流程" class="headerlink" title="1.1 登录流程"></a>1.1 登录流程</h2><p>就直接到登录页面，然后抓包、登录，在众多包中一眼看到这个域名passport开头的，点进来一看，好家伙，设置了13个cookie，多半是这个api没错了，再确认一下，看看请求内容，带了账号密码，那就是这个了。</p>
+<h1 id="分析打卡流程"><a href="#分析打卡流程" class="headerlink" title="分析打卡流程"></a>分析打卡流程</h1><p>平时打卡都是在学习通APP上进行的，所以直接在手机抓包分析。</p>
+<h2 id="登录流程"><a href="#登录流程" class="headerlink" title="登录流程"></a>登录流程</h2><p>就直接到登录页面，然后抓包、登录，在众多包中一眼看到这个域名passport开头的，点进来一看，好家伙，设置了13个cookie，多半是这个api没错了，再确认一下，看看请求内容，带了账号密码，那就是这个了。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210211110139434.png" srcset="/img/loading.gif" alt="image-20210211110139434"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210211105918543.png" srcset="/img/loading.gif" alt="image-20210211105918543"></p>
 <p>直接把这个api拿到浏览器上试试，没问题了。</p>
