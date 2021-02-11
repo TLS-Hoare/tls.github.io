@@ -1,0 +1,719 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="acm | algorithm | blog | ctf | ml">
+  <meta name="author" content="TLS">
+  <meta name="keywords" content="ACM, Algorithm, CTF">
+  <title>学习通自动打卡 - TLS&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+        
+        
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/prism/1.21.0/themes/prism-tomorrow.min.css" />
+      
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="/css/oopstls.css">
+
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>TLS</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/posts/default_banner.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-11 00:00" pubdate>
+        2021年2月11日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">学习通自动打卡</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月12日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <blockquote>
+<p>上学期开学前一段时间，学校就让我们在学习通上打卡，用来确定每个同学返校前的健康状况？这学期又是这样的操作，而且要求的更严格了，放寒假还天天被人吹着打卡，就很无语。讲道理哪个同学有异常情况的话，会直接通知到学校的吧。所以我个人觉得这个打卡没什么意义，而且我天天宅在家里，应该不会有什么异常情况，所以搞一个自动打卡应该没问题吧😂。</p>
+</blockquote>
+<h1 id="1-分析打卡流程"><a href="#1-分析打卡流程" class="headerlink" title="1 分析打卡流程"></a>1 分析打卡流程</h1><p>平时打卡都是在学习通APP上进行的，所以直接在手机抓包分析。</p>
+<h2 id="1-1-登录流程"><a href="#1-1-登录流程" class="headerlink" title="1.1 登录流程"></a>1.1 登录流程</h2><p>就直接到登录页面，然后抓包、登录，在众多包中一眼看到这个域名passport开头的，点进来一看，好家伙，设置了13个cookie，多半是这个api没错了，再确认一下，看看请求内容，带了账号密码，那就是这个了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210211110139434.png" srcset="/img/loading.gif" alt="image-20210211110139434"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210211105918543.png" srcset="/img/loading.gif" alt="image-20210211105918543"></p>
+<p>直接把这个api拿到浏览器上试试，没问题了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210211110359697.png" srcset="/img/loading.gif" alt="image-20210211110359697"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210211110509172.png" srcset="/img/loading.gif" alt="image-20210211110509172"></p>
+<p>同时在刚刚手机上抓到的包中找到了首页的url，后面的操作就可以在电脑上完成了，体验+。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212013902597.png" srcset="/img/loading.gif" alt="image-20210212013902597"></p>
+<p>然后就是打开burp，一步一步的模拟打卡过程。</p>
+<p>整个打卡过程貌似有四次post请求。</p>
+<p>从域名上看😂😂</p>
+<ul>
+<li>第一个是获取表单内容的（后面发现同时还设置了一个CheckCode来控制每天打卡一次</li>
+<li>第二个是用来计数的（并不知道计数什么，但是貌似不影响</li>
+<li>第三个是用来校验填写的内容是否合法的（不用校验也能进行第四步</li>
+<li>第四个是保存我们填写的信息的</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212015254019.png" srcset="/img/loading.gif" alt="image-20210212015254019"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212014858781.png" srcset="/img/loading.gif" alt="image-20210212014858781"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212015405610.png" srcset="/img/loading.gif" alt="image-20210212015405610"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212015539797.png" srcset="/img/loading.gif" alt="image-20210212015539797"></p>
+<p>经过一些测试，得出结论，我们只需要访问第一个api获取checkCode，然后用这个checkCode去保存我们的打卡信息就可以了。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># -*- coding: utf8 -*-</span>
+<span class="token keyword">import</span> requests<span class="token punctuation">,</span> urllib<span class="token punctuation">,</span> re
+
+address <span class="token operator">=</span> <span class="token string">'定位地址'</span>
+params_login <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token string">'uname'</span><span class="token punctuation">:</span> <span class="token string">'账号'</span><span class="token punctuation">,</span>
+  <span class="token string">'code'</span><span class="token punctuation">:</span> <span class="token string">'密码'</span><span class="token punctuation">,</span>
+  <span class="token string">'loginType'</span><span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+  <span class="token string">'roleSelect'</span><span class="token punctuation">:</span> <span class="token string">'true'</span>
+<span class="token punctuation">&#125;</span>
+
+headers <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Dalvik/2.1.0 (Linux; U; Android 10; SM-N9600 Build/QP1A.190711.020) com.chaoxing.mobile/ChaoXingStudy_3_4.8.2_android_phone_600_56 (@Kalimdor)_8e82a808e07d4363a8b24f97c35f6745'</span><span class="token punctuation">,</span>
+  <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/x-www-form-urlencoded;charset=UTF-8'</span><span class="token punctuation">,</span>
+  <span class="token string">'X-Requested-With'</span><span class="token punctuation">:</span> <span class="token string">'XMLHttpRequest'</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+  api_login <span class="token operator">=</span> <span class="token string">r'https://passport2-api.chaoxing.com/v11/loginregister?cx_xxt_passport=json'</span>
+  resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>api_login<span class="token punctuation">,</span> params <span class="token operator">=</span> params_login<span class="token punctuation">,</span> headers <span class="token operator">=</span> headers<span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>resp<span class="token punctuation">.</span>status_code <span class="token operator">==</span> <span class="token number">403</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">'403 登录失败'</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> resp
+
+<span class="token keyword">def</span> <span class="token function">get_checkCode</span><span class="token punctuation">(</span>resp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    code <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">r"checkCode.*'(.*)'"</span><span class="token punctuation">,</span> resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> code<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> code<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"校验码获取失败"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 填写表单打卡，现在好像是不用这个了</span>
+<span class="token comment"># def checkin1(cookies):</span>
+<span class="token comment">#   api_checkCode = r'http://office.chaoxing.com/front/web/apps/forms/fore/apply?uid=83260789&amp;code=2iVkZKN1&amp;mappId=3820629&amp;appId=92610a6cf5e6415c8b4c2ac9c6a9a0f1&amp;appKey=DhXDEM4W331834H2&amp;id=1651&amp;enc=3e98bd89c8ce6bcabf08dbad8553f3c1&amp;state=1432&amp;formAppId=&amp;fidEnc=49b6a032fb2a0f2b'</span>
+<span class="token comment">#   checkCode = get_checkCode(requests.get(api_checkCode, cookies = cookies))</span>
+<span class="token comment">#   data = r'这里是打卡内容，由于是提交整个页面，比较长，而且这个打卡就在刚刚被删除了，所以这里不保留了'</span>
+<span class="token comment">#   params_c1 = &#123;</span>
+<span class="token comment">#     'formId': '1651',</span>
+<span class="token comment">#     'formAppId': '',</span>
+<span class="token comment">#     'version': '2',</span>
+<span class="token comment">#     'formData': urllib.parse.quote(data),</span>
+<span class="token comment">#     'uniqueCondition': '[]',</span>
+<span class="token comment">#     't': '1',</span>
+<span class="token comment">#     'enc': '3e98bd89c8ce6bcabf08dbad8553f3c1',</span>
+<span class="token comment">#     'checkCode': checkCode,</span>
+<span class="token comment">#     'gatherId': '0',</span>
+<span class="token comment">#     'gverify': ''</span>
+<span class="token comment">#   &#125;</span>
+<span class="token comment">#   api_c1 = r'http://office.chaoxing.com/data/apps/forms/fore/user/save?lookuid=%s' % (cookies['_uid'])</span>
+<span class="token comment">#   resp = requests.post(api_c1, params = params_c1, cookies = cookies)</span>
+<span class="token comment">#   print(resp.text)</span>
+
+<span class="token comment"># 定位打卡</span>
+<span class="token keyword">def</span> <span class="token function">checkin2</span><span class="token punctuation">(</span>cookies<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  api_checkCode <span class="token operator">=</span> <span class="token string">r'https://office.chaoxing.com/front/apps/forms/fore/apply?id=8273&amp;formAppId=&amp;enc=61d91ce3a502d4f32332ed15d8c42e33&amp;appId=b9fe49b5f93a44c2aa2529d2e80d879a&amp;appKey=5G64Sdj7s5Z87voF&amp;fidEnc=49b6a032fb2a0f2b&amp;uid=83260789&amp;mappId=4580775&amp;code=w3R6joUM&amp;state=1432'</span>
+  checkCode <span class="token operator">=</span> get_checkCode<span class="token punctuation">(</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>api_checkCode<span class="token punctuation">,</span> cookies <span class="token operator">=</span> cookies<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  params_c2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'formId'</span><span class="token punctuation">:</span> <span class="token string">'8273'</span><span class="token punctuation">,</span>
+    <span class="token string">'formAppId'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'version'</span><span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+    <span class="token string">'formData'</span><span class="token punctuation">:</span> <span class="token string">'[&#123;"compt":"location","id":1,"fields":[&#123;"verify":&#123;&#125;,"tip":&#123;"imgs":[],"text":""&#125;,"label":"定位","fieldType":&#123;"type":"point"&#125;,"editable":true,"visible":true,"values":[&#123;"address":"%s","lng":104.083898,"lat":30.759099&#125;]&#125;],"inDetailGroupIndex":-1,"fromDetail":false,"isShow":true,"hasAuthority":true&#125;]'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>address<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'uniqueCondition'</span><span class="token punctuation">:</span> <span class="token string">'[]'</span><span class="token punctuation">,</span>
+    <span class="token string">'t'</span><span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+    <span class="token string">'enc'</span><span class="token punctuation">:</span> <span class="token string">'61d91ce3a502d4f32332ed15d8c42e33'</span><span class="token punctuation">,</span>
+    <span class="token string">'checkCode'</span><span class="token punctuation">:</span> checkCode<span class="token punctuation">,</span>
+    <span class="token string">'gatherId'</span><span class="token punctuation">:</span> <span class="token string">'0'</span><span class="token punctuation">,</span>
+    <span class="token string">'gverify'</span><span class="token punctuation">:</span> <span class="token string">''</span>
+  <span class="token punctuation">&#125;</span>
+  api_c2 <span class="token operator">=</span> <span class="token string">'https://office.chaoxing.com/data/apps/forms/fore/user/save?lookuid=%s'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>cookies<span class="token punctuation">[</span><span class="token string">'_uid'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  resp <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>api_c2<span class="token punctuation">,</span> params <span class="token operator">=</span> params_c2<span class="token punctuation">,</span> cookies <span class="token operator">=</span> cookies<span class="token punctuation">)</span>
+  <span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+
+<span class="token comment"># 阿里云函数 （腾讯云函数默认函数名的话，这里得用main_handler</span>
+<span class="token keyword">def</span> <span class="token function">handler</span><span class="token punctuation">(</span>event<span class="token punctuation">,</span> context<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  resp <span class="token operator">=</span> login<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment">#checkin1(resp.cookies)</span>
+  checkin2<span class="token punctuation">(</span>resp<span class="token punctuation">.</span>cookies<span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+  handler<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<p>测试通过</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212020408353.png" srcset="/img/loading.gif" alt="image-20210212020408353"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212020504083.png" srcset="/img/loading.gif" alt="image-20210212020504083"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212020551151.png" srcset="/img/loading.gif" alt="image-20210212020551151"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212020625136.png" srcset="/img/loading.gif" alt="image-20210212020625136"></p>
+<h1 id="部署到云函数或者github-action"><a href="#部署到云函数或者github-action" class="headerlink" title="部署到云函数或者github action"></a>部署到云函数或者github action</h1><p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212021739139.png" srcset="/img/loading.gif" alt="image-20210212021739139"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212021756288.png" srcset="/img/loading.gif" alt="image-20210212021756288"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212021835137.png" srcset="/img/loading.gif" alt="image-20210212021835137"></p>
+<p>本地测试成功，结果阿里函数服务翻车😭</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212022307621.png" srcset="/img/loading.gif" alt="image-20210212022307621"></p>
+<p>没找到原因，直接换了腾讯云函数碰碰运气，结果就可以了？？？ 为什么啊</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212022447353.png" srcset="/img/loading.gif" alt="image-20210212022447353"></p>
+<p>然后设置一个每天自动打卡的触发器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/oopstls/PicBed/blog/XXT_check-in/image-20210212022524763.png" srcset="/img/loading.gif" alt="image-20210212022524763"></p>
+<p>大年初一2.26，我居然在搞这个玩意。。。</p>
+<p>写的比较混乱，很多地方之前没截图就跳过了😂，有人看的话不懂可以发评论😂。</p>
+<p>睡了睡了。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%9E%8E%E6%90%9E/">瞎搞</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a>
+                    
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%8A%93%E5%8C%85/">抓包</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/0/">
+                        <span class="hidden-mobile">背包九讲笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+<div id="vcomments"></div>
+<script type="text/javascript">
+  function loadValine() {
+    addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+      new Valine({
+        el: "#vcomments",
+        app_id: "985AXniz2mJm6mqdLoJKmjw2-gzGzoHsz",
+        app_key: "qUqUS79rjYGGwq9ICconteoz",
+        placeholder: "说点什么 (上面昵称框填入QQ号自动获取昵称和头像，填写邮箱以获取回复邮件通知)",
+        path: window.location.pathname,
+        avatar: "retro",
+        meta: ["nick","mail","link"],
+        pageSize: "10",
+        lang: "zh-CN",
+        highlight: true,
+        recordIP: true,
+        serverURLs: "https://985axniz.lc-cn-n1-shared.com",
+        requiredFields: ["nick"],
+        enableQQ: true,
+      });
+    });
+  }
+  waitElementVisible('vcomments', loadValine);
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments
+    powered by Valine.</a></noscript>
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <a href="http://beian.miit.gov.cn/" target="_blank"
+       rel="nofollow noopener">蜀ICP备20023873号</a>
+    
+  </div>
+
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+    
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+  
+<script src="/js/oopstls.js"></script>
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "学习通自动打卡&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 50,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "❡"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
