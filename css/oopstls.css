@@ -1,4 +1,4 @@
-.code-toolbar:before {
+/* .code-toolbar:before {
   content:" ";
   position:absolute;
   -webkit-border-radius:50%;
@@ -11,7 +11,7 @@
   -webkit-box-shadow:20px 0 #fdbc40,40px 0 #35cd4b;
   box-shadow:20px 0 #fdbc40,40px 0 #35cd4b;
   z-index:2
-}
+} */
 
 img:hover {
   transform: scale(1.2);
